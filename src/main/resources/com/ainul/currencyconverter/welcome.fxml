@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="com.ainul.currencyconverter.controllers.WelcomeController">
+    <children>
+        <!-- Background image - fills entire StackPane -->
+        <ImageView StackPane.alignment="CENTER" preserveRatio="false" VBox.vgrow="ALWAYS"
+            HBox.hgrow="ALWAYS">
+            <image>
+                <Image url="@images/CCB.png" />
+            </image>
+        </ImageView>
+
+        <!-- Subtle dark overlay -->
+        <StackPane style="-fx-background-color: rgba(0,0,0,0.35);" />
+
+        <BorderPane style="-fx-background-color: transparent;">
+
+            <top>
+                <VBox alignment="CENTER" prefHeight="90.0"
+                    style="-fx-background-color: rgba(10,20,35,0.72); -fx-border-color: rgba(52,152,219,0.6); -fx-border-width: 0 0 2 0;"
+                    BorderPane.alignment="CENTER">
+                    <children>
+                        <Label text="💱 Currency Converter" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Label>
+                        <Label text="Your trusted real-time currency conversion platform"
+                            textFill="#a0c4e0">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets bottom="12.0" left="20.0" right="20.0" top="12.0" />
+                    </padding>
+                </VBox>
+            </top>
+
+            <center>
+                <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+                    <children>
+                        <TabPane fx:id="tabPane" prefHeight="410.0" prefWidth="480.0"
+                            tabClosingPolicy="UNAVAILABLE"
+                            style="-fx-background-color: transparent; -fx-tab-min-height: 36;">
+                            <tabs>
+                                <Tab text="🔑  Login">
+                                    <VBox spacing="16.0"
+                                        style="-fx-background-color: rgba(255,255,255,0.15); -fx-padding: 32; -fx-background-radius: 0 0 10 10;">
+                                        <children>
+                                            <Label text="Welcome Back" textFill="WHITE">
+                                                <font>
+                                                    <Font name="System Bold" size="22.0" />
+                                                </font>
+                                            </Label>
+                                            <VBox spacing="6.0">
+                                                <children>
+                                                    <Label text="Username" textFill="#d0e8ff" />
+                                                    <TextField fx:id="loginUsernameField"
+                                                        promptText="Enter your username"
+                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="6.0">
+                                                <children>
+                                                    <Label text="Password" textFill="#d0e8ff" />
+                                                    <PasswordField fx:id="loginPasswordField"
+                                                        promptText="Enter your password"
+                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                </children>
+                                            </VBox>
+                                            <Label fx:id="loginErrorLabel" textFill="#ff6b6b"
+                                                wrapText="true" />
+                                            <Button mnemonicParsing="false" onAction="#handleLogin"
+                                                prefHeight="42.0" prefWidth="220.0"
+                                                style="-fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;"
+                                                text="Login" />
+                                        </children>
+                                    </VBox>
+                                </Tab>
+                                <Tab text="📝  Sign Up">
+                                    <VBox spacing="14.0"
+                                        style="-fx-background-color: rgba(255,255,255,0.15); -fx-padding: 28; -fx-background-radius: 0 0 10 10;">
+                                        <children>
+                                            <Label text="Create an Account" textFill="WHITE">
+                                                <font>
+                                                    <Font name="System Bold" size="22.0" />
+                                                </font>
+                                            </Label>
+                                            <VBox spacing="5.0">
+                                                <children>
+                                                    <Label text="Username" textFill="#d0e8ff" />
+                                                    <TextField fx:id="signupUsernameField"
+                                                        promptText="Choose a username"
+                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="5.0">
+                                                <children>
+                                                    <Label text="Email" textFill="#d0e8ff" />
+                                                    <TextField fx:id="signupEmailField"
+                                                        promptText="Enter your email"
+                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                </children>
+                                            </VBox>
+                                            <VBox spacing="5.0">
+                                                <children>
+                                                    <Label text="Password" textFill="#d0e8ff" />
+                                                    <PasswordField fx:id="signupPasswordField"
+                                                        promptText="Min 6 characters"
+                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                </children>
+                                            </VBox>
+                                            <Label fx:id="signupErrorLabel" textFill="#ff6b6b"
+                                                wrapText="true" />
+                                            <Label fx:id="signupSuccessLabel" textFill="#2ecc71"
+                                                wrapText="true" />
+                                            <Button mnemonicParsing="false" onAction="#handleSignup"
+                                                prefHeight="42.0" prefWidth="220.0"
+                                                style="-fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #2980b9; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;"
+                                                text="Create Account" />
+                                        </children>
+                                    </VBox>
+                                </Tab>
+                            </tabs>
+                        </TabPane>
+                        <HBox alignment="CENTER" spacing="14.0">
+                            <padding>
+                                <Insets top="14.0" />
+                            </padding>
+                            <children>
+                                <Label text="Or continue without an account:" textFill="#e0e0e0" />
+                                <Button mnemonicParsing="false" onAction="#handleGuestLogin"
+                                    prefHeight="38.0" prefWidth="140.0"
+                                    style="-fx-font-size: 12; -fx-background-color: rgba(149,165,166,0.75); -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;"
+                                    text="👤  Guest User" />
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </center>
+
+            <bottom>
+                <Label text="© 2024 Currency Converter. All rights reserved." textFill="#aab7c4"
+                    BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="12.0" top="6.0" />
+                    </padding>
+                </Label>
+            </bottom>
+        </BorderPane>
+    </children>
+</StackPane>
