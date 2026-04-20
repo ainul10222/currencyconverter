@@ -18,11 +18,12 @@
 
 <StackPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21"
     xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="com.ainul.currencyconverter.controllers.WelcomeController">
+    fx:controller="com.ainul.currencyconverter.controllers.WelcomeController" fx:id="rootStackPane">
     <children>
         <!-- Background image - fills entire StackPane -->
-        <ImageView StackPane.alignment="CENTER" preserveRatio="false" VBox.vgrow="ALWAYS"
-            HBox.hgrow="ALWAYS">
+        <ImageView fx:id="backgroundImage" StackPane.alignment="CENTER" preserveRatio="false"
+            fitHeight="600.0"
+            fitWidth="800.0">
             <image>
                 <Image url="@images/CCB.png" />
             </image>

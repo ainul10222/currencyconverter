@@ -8,6 +8,8 @@ import com.ainul.currencyconverter.services.CurrencyConversionService;
 import com.ainul.currencyconverter.services.HistoryService;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -20,6 +22,12 @@ public class HomeController {
     private CurrencyConversionService conversionService;
     private HistoryService historyService;
     private DecimalFormat decimalFormat;
+
+    @FXML
+    private StackPane rootStackPane;
+
+    @FXML
+    private ImageView backgroundImage;
 
     @FXML
     private Label welcomeLabel;
@@ -42,6 +50,13 @@ public class HomeController {
         conversionService = App.getCurrencyConversionService();
         historyService = App.getHistoryService();
         decimalFormat = new DecimalFormat("#.##");
+
+        // Bind the background image dimensions to the StackPane's size
+        // so the image scales with window resizing
+        if (backgroundImage != null && rootStackPane != null) {
+            backgroundImage.fitWidthProperty().bind(rootStackPane.widthProperty());
+            backgroundImage.fitHeightProperty().bind(rootStackPane.heightProperty());
+        }
 
         // Set welcome label
         User currentUser = authService.getCurrentUser();
