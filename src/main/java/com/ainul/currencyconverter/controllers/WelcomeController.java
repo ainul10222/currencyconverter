@@ -52,6 +52,12 @@ public class WelcomeController {
             backgroundImage.fitWidthProperty().bind(rootStackPane.widthProperty());
             backgroundImage.fitHeightProperty().bind(rootStackPane.heightProperty());
         }
+
+        // Bind the TabPane width to 75% of the root StackPane width
+        // so the login box scales to 75% of the window width and stays centered
+        if (tabPane != null && rootStackPane != null) {
+            tabPane.maxWidthProperty().bind(rootStackPane.widthProperty().multiply(0.75));
+        }
     }
 
     @FXML
