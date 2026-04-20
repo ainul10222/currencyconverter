@@ -16,12 +16,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="800.0" prefWidth="1000.0"
+<StackPane prefHeight="800.0" prefWidth="1000.0" fx:id="rootStackPane"
     xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
     fx:controller="com.ainul.currencyconverter.controllers.HomeController">
     <children>
         <!-- Background image -->
-        <ImageView fitWidth="1000.0" fitHeight="800.0" preserveRatio="false">
+        <ImageView fx:id="backgroundImage" fitWidth="1000.0" fitHeight="800.0" preserveRatio="false">
             <image>
                 <Image url="@images/CCB.png" />
             </image>

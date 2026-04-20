@@ -7,6 +7,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 
@@ -15,6 +17,12 @@ import java.io.IOException;
  */
 public class HistoryController {
     private HistoryService historyService;
+
+    @FXML
+    private StackPane rootStackPane;
+
+    @FXML
+    private ImageView backgroundImage;
 
     @FXML
     private Label headerLabel;
@@ -26,6 +34,14 @@ public class HistoryController {
     @FXML
     public void initialize() {
         historyService = App.getHistoryService();
+
+        // Bind the background image dimensions to the StackPane's size
+        // so the image scales with window resizing
+        if (backgroundImage != null && rootStackPane != null) {
+            backgroundImage.fitWidthProperty().bind(rootStackPane.widthProperty());
+            backgroundImage.fitHeightProperty().bind(rootStackPane.heightProperty());
+        }
+
         refreshHistory();
     }
 

@@ -6,6 +6,8 @@ import com.ainul.currencyconverter.services.AuthenticationService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 
@@ -14,6 +16,12 @@ import java.io.IOException;
  */
 public class SettingsController {
     private AuthenticationService authService;
+
+    @FXML
+    private StackPane rootStackPane;
+
+    @FXML
+    private ImageView backgroundImage;
 
     @FXML
     private Label settingsWelcomeLabel;
@@ -27,6 +35,14 @@ public class SettingsController {
     @FXML
     public void initialize() {
         authService = App.getAuthenticationService();
+
+        // Bind the background image dimensions to the StackPane's size
+        // so the image scales with window resizing
+        if (backgroundImage != null && rootStackPane != null) {
+            backgroundImage.fitWidthProperty().bind(rootStackPane.widthProperty());
+            backgroundImage.fitHeightProperty().bind(rootStackPane.heightProperty());
+        }
+
         User currentUser = authService.getCurrentUser();
 
         if (currentUser != null) {
