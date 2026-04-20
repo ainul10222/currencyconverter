@@ -1,0 +1,65 @@
+.dark-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.42);
+}
+
+.root-border-pane {
+    -fx-background-color: transparent;
+}
+
+.top-nav {
+    -fx-background-color: rgba(20, 30, 48, 0.90);
+    -fx-border-color: rgba(52, 152, 219, 0.5);
+    -fx-border-width: 0 0 2 0;
+    -fx-padding: 12 20 12 20;
+}
+
+.back-button, .home-button, .settings-button, .logout-button, .clear-history-button {
+    -fx-font-size: 12;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.back-button {
+    -fx-background-color: #34495e;
+}
+
+.home-button {
+    -fx-background-color: #2980b9;
+}
+
+.logout-button {
+    -fx-background-color: #c0392b;
+}
+
+.content-wrapper {
+    -fx-padding: 40 60 40 60;
+}
+
+.settings-separator {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-padding: 5 0 5 0;
+}
+
+.account-card {
+    -fx-background-color: rgba(255, 255, 255, 0.93);
+    -fx-padding: 28;
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(52, 152, 219, 0.3);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+.view-history-button {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-background-color: #8e44ad;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.root-stack-pane {
+    -fx-min-width: 1000;
+    -fx-min-height: 800;
+}
