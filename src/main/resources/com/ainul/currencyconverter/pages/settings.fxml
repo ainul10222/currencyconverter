@@ -13,35 +13,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="800.0" prefWidth="1000.0" fx:id="rootStackPane"
+<StackPane fx:id="rootStackPane"
     xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="com.ainul.currencyconverter.controllers.SettingsController">
+    fx:controller="com.ainul.currencyconverter.controllers.SettingsController"
+    stylesheets="@../styles/settings.css"
+    styleClass="root-stack-pane">
     <children>
         <!-- Background image -->
-        <ImageView fx:id="backgroundImage" fitWidth="1000.0" fitHeight="800.0" preserveRatio="false">
+        <ImageView fx:id="backgroundImage" preserveRatio="true">
             <image>
-                <Image url="@images/CCB.png" />
+                <Image url="@../images/background.png" />
             </image>
         </ImageView>
 
         <!-- Dark overlay -->
-        <StackPane style="-fx-background-color: rgba(0,0,0,0.42);" />
+        <StackPane styleClass="dark-overlay" />
 
-        <BorderPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: transparent;">
+        <BorderPane StackPane.alignment="TOP_CENTER" styleClass="root-border-pane">
             <top>
                 <VBox alignment="CENTER_LEFT" prefHeight="70.0"
-                    style="-fx-background-color: rgba(20, 30, 48, 0.90); -fx-border-color: rgba(52,152,219,0.5); -fx-border-width: 0 0 2 0; -fx-padding: 12 20 12 20;"
+                    styleClass="top-nav"
                     BorderPane.alignment="CENTER">
                     <children>
                         <HBox alignment="CENTER_LEFT" spacing="12.0">
                             <children>
                                 <Button mnemonicParsing="false" onAction="#handleBack"
                                     prefHeight="34.0" prefWidth="90.0"
-                                    style="-fx-font-size: 12; -fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 6; -fx-cursor: hand;"
+                                    styleClass="back-button"
                                     text="⬅ Back" />
                                 <Button mnemonicParsing="false" onAction="#handleHome"
                                     prefHeight="34.0" prefWidth="90.0"
-                                    style="-fx-font-size: 12; -fx-background-color: #2980b9; -fx-text-fill: white; -fx-background-radius: 6; -fx-cursor: hand;"
+                                    styleClass="home-button"
                                     text="🏠 Home" />
                                 <Label text="⚙  Settings" textFill="WHITE">
                                     <font>
@@ -51,7 +53,7 @@
                                 <Region prefHeight="20.0" prefWidth="20.0" HBox.hgrow="ALWAYS" />
                                 <Button mnemonicParsing="false" onAction="#handleLogout"
                                     prefHeight="34.0" prefWidth="100.0"
-                                    style="-fx-font-size: 12; -fx-background-color: #c0392b; -fx-text-fill: white; -fx-background-radius: 6; -fx-cursor: hand;"
+                                    styleClass="logout-button"
                                     text="🚪 Logout" />
                             </children>
                         </HBox>
@@ -60,7 +62,7 @@
             </top>
 
             <center>
-                <VBox spacing="20.0" style="-fx-padding: 40 60 40 60;" BorderPane.alignment="CENTER">
+                <VBox spacing="20.0" styleClass="content-wrapper" BorderPane.alignment="CENTER">
                     <children>
                         <Label fx:id="settingsWelcomeLabel" text="Account Settings" textFill="WHITE">
                             <font>
@@ -68,11 +70,11 @@
                             </font>
                         </Label>
 
-                        <Separator style="-fx-background-color: rgba(255,255,255,0.3);" />
+                        <Separator styleClass="settings-separator" />
 
                         <!-- Account Info Card -->
                         <VBox spacing="16.0"
-                            style="-fx-background-color: rgba(255,255,255,0.93); -fx-padding: 28; -fx-background-radius: 12; -fx-border-color: rgba(52,152,219,0.3); -fx-border-radius: 12; -fx-border-width: 1;">
+                            styleClass="account-card">
                             <children>
                                 <Label text="👤  Account Information" textFill="#1a252f">
                                     <font>
@@ -137,7 +139,7 @@
 
                         <Button mnemonicParsing="false" onAction="#handleViewHistory"
                             prefHeight="44.0" prefWidth="260.0"
-                            style="-fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #8e44ad; -fx-text-fill: white; -fx-background-radius: 10; -fx-cursor: hand;"
+                            styleClass="view-history-button"
                             text="📜  View Conversion History" />
                     </children>
                 </VBox>

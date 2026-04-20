@@ -13,35 +13,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="800.0" prefWidth="1000.0" fx:id="rootStackPane"
+<StackPane fx:id="rootStackPane"
     xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="com.ainul.currencyconverter.controllers.HistoryController">
+    fx:controller="com.ainul.currencyconverter.controllers.HistoryController"
+    stylesheets="@../styles/history.css"
+    styleClass="root-stack-pane">
     <children>
         <!-- Background image -->
-        <ImageView fx:id="backgroundImage" fitWidth="1000.0" fitHeight="800.0" preserveRatio="false">
+        <ImageView fx:id="backgroundImage" preserveRatio="true">
             <image>
-                <Image url="@images/CCB.png" />
+                <Image url="@../images/background.png" />
             </image>
         </ImageView>
 
         <!-- Dark overlay -->
-        <StackPane style="-fx-background-color: rgba(0,0,0,0.42);" />
+        <StackPane styleClass="dark-overlay" />
 
-        <BorderPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: transparent;">
+        <BorderPane StackPane.alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1000.0" styleClass="root-border-pane">
             <top>
                 <VBox alignment="CENTER_LEFT" prefHeight="70.0"
-                    style="-fx-background-color: rgba(20, 30, 48, 0.90); -fx-border-color: rgba(52,152,219,0.5); -fx-border-width: 0 0 2 0; -fx-padding: 12 20 12 20;"
+                    styleClass="top-nav"
                     BorderPane.alignment="CENTER">
                     <children>
                         <HBox alignment="CENTER_LEFT" spacing="12.0">
                             <children>
                                 <Button mnemonicParsing="false" onAction="#handleBack"
                                     prefHeight="34.0" prefWidth="90.0"
-                                    style="-fx-font-size: 12; -fx-background-color: #34495e; -fx-text-fill: white; -fx-background-radius: 6; -fx-cursor: hand;"
+                                    styleClass="back-button"
                                     text="⬅ Back" />
                                 <Button mnemonicParsing="false" onAction="#handleHome"
                                     prefHeight="34.0" prefWidth="90.0"
-                                    style="-fx-font-size: 12; -fx-background-color: #2980b9; -fx-text-fill: white; -fx-background-radius: 6; -fx-cursor: hand;"
+                                    styleClass="home-button"
                                     text="🏠 Home" />
                                 <Label fx:id="headerLabel" text="📜  Saved Conversion History"
                                     textFill="WHITE">
@@ -53,7 +55,7 @@
                                 <Button mnemonicParsing="false" onAction="#handleClearHistory"
                                     fx:id="clearHistoryButton"
                                     prefHeight="34.0" prefWidth="150.0"
-                                    style="-fx-font-size: 12; -fx-background-color: #e67e22; -fx-text-fill: white; -fx-background-radius: 6; -fx-cursor: hand;"
+                                    styleClass="clear-history-button"
                                     text="🗑 Clear History" />
                             </children>
                         </HBox>
@@ -63,11 +65,11 @@
 
             <center>
                 <VBox spacing="16.0"
-                    style="-fx-padding: 30;"
+                    styleClass="content-wrapper"
                     BorderPane.alignment="CENTER">
                     <children>
                         <VBox spacing="12.0"
-                            style="-fx-background-color: rgba(255,255,255,0.92); -fx-padding: 24; -fx-background-radius: 12; -fx-border-color: rgba(52,152,219,0.3); -fx-border-radius: 12; -fx-border-width: 1;"
+                            styleClass="history-card"
                             VBox.vgrow="ALWAYS">
                             <children>
                                 <Label text="All your saved conversions appear below:"
@@ -79,7 +81,7 @@
                                 <TextArea fx:id="historyTextArea" prefHeight="580.0"
                                     prefWidth="900.0"
                                     wrapText="true" editable="false"
-                                    style="-fx-font-size: 14; -fx-background-color: rgba(248,249,250,0.98); -fx-border-color: #dfe6e9; -fx-border-radius: 8; -fx-padding: 10;" />
+                                    styleClass="history-text-area" />
                             </children>
                         </VBox>
                     </children>
