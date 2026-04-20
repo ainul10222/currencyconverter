@@ -60,90 +60,105 @@
             <center>
                 <VBox alignment="CENTER" BorderPane.alignment="CENTER">
                     <children>
-                        <TabPane fx:id="tabPane" prefHeight="410.0" prefWidth="480.0"
-                            tabClosingPolicy="UNAVAILABLE"
-                            style="-fx-background-color: transparent; -fx-tab-min-height: 36;">
-                            <tabs>
-                                <Tab text="🔑  Login">
-                                    <VBox spacing="16.0"
-                                        style="-fx-background-color: rgba(255,255,255,0.15); -fx-padding: 32; -fx-background-radius: 0 0 10 10;">
-                                        <children>
-                                            <Label text="Welcome Back" textFill="WHITE">
-                                                <font>
-                                                    <Font name="System Bold" size="22.0" />
-                                                </font>
-                                            </Label>
-                                            <VBox spacing="6.0">
+                        <HBox alignment="CENTER" spacing="0">
+                            <children>
+                                <TabPane fx:id="tabPane" prefHeight="410.0"
+                                    tabClosingPolicy="UNAVAILABLE"
+                                    style="-fx-background-color: transparent; -fx-tab-min-height: 36;">
+                                    <tabs>
+                                        <Tab text="🔑  Login">
+                                            <VBox spacing="16.0"
+                                                style="-fx-background-color: rgba(255,255,255,0.15); -fx-padding: 32; -fx-background-radius: 0 0 10 10;">
                                                 <children>
-                                                    <Label text="Username" textFill="#d0e8ff" />
-                                                    <TextField fx:id="loginUsernameField"
-                                                        promptText="Enter your username"
-                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                    <Label text="Welcome Back" textFill="WHITE">
+                                                        <font>
+                                                            <Font name="System Bold" size="22.0" />
+                                                        </font>
+                                                    </Label>
+                                                    <VBox spacing="6.0">
+                                                        <children>
+                                                            <Label text="Username"
+                                                                textFill="#d0e8ff" />
+                                                            <TextField fx:id="loginUsernameField"
+                                                                promptText="Enter your username"
+                                                                style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                        </children>
+                                                    </VBox>
+                                                    <VBox spacing="6.0">
+                                                        <children>
+                                                            <Label text="Password"
+                                                                textFill="#d0e8ff" />
+                                                            <PasswordField
+                                                                fx:id="loginPasswordField"
+                                                                promptText="Enter your password"
+                                                                style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                        </children>
+                                                    </VBox>
+                                                    <Label fx:id="loginErrorLabel"
+                                                        textFill="#ff6b6b"
+                                                        wrapText="true" />
+                                                    <Button mnemonicParsing="false"
+                                                        onAction="#handleLogin"
+                                                        prefHeight="42.0" prefWidth="220.0"
+                                                        style="-fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;"
+                                                        text="Login" />
                                                 </children>
                                             </VBox>
-                                            <VBox spacing="6.0">
+                                        </Tab>
+                                        <Tab text="📝  Sign Up">
+                                            <VBox spacing="14.0"
+                                                style="-fx-background-color: rgba(255,255,255,0.15); -fx-padding: 28; -fx-background-radius: 0 0 10 10;">
                                                 <children>
-                                                    <Label text="Password" textFill="#d0e8ff" />
-                                                    <PasswordField fx:id="loginPasswordField"
-                                                        promptText="Enter your password"
-                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                    <Label text="Create an Account" textFill="WHITE">
+                                                        <font>
+                                                            <Font name="System Bold" size="22.0" />
+                                                        </font>
+                                                    </Label>
+                                                    <VBox spacing="5.0">
+                                                        <children>
+                                                            <Label text="Username"
+                                                                textFill="#d0e8ff" />
+                                                            <TextField fx:id="signupUsernameField"
+                                                                promptText="Choose a username"
+                                                                style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                        </children>
+                                                    </VBox>
+                                                    <VBox spacing="5.0">
+                                                        <children>
+                                                            <Label text="Email" textFill="#d0e8ff" />
+                                                            <TextField fx:id="signupEmailField"
+                                                                promptText="Enter your email"
+                                                                style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                        </children>
+                                                    </VBox>
+                                                    <VBox spacing="5.0">
+                                                        <children>
+                                                            <Label text="Password"
+                                                                textFill="#d0e8ff" />
+                                                            <PasswordField
+                                                                fx:id="signupPasswordField"
+                                                                promptText="Min 6 characters"
+                                                                style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
+                                                        </children>
+                                                    </VBox>
+                                                    <Label fx:id="signupErrorLabel"
+                                                        textFill="#ff6b6b"
+                                                        wrapText="true" />
+                                                    <Label fx:id="signupSuccessLabel"
+                                                        textFill="#2ecc71"
+                                                        wrapText="true" />
+                                                    <Button mnemonicParsing="false"
+                                                        onAction="#handleSignup"
+                                                        prefHeight="42.0" prefWidth="220.0"
+                                                        style="-fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #2980b9; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;"
+                                                        text="Create Account" />
                                                 </children>
                                             </VBox>
-                                            <Label fx:id="loginErrorLabel" textFill="#ff6b6b"
-                                                wrapText="true" />
-                                            <Button mnemonicParsing="false" onAction="#handleLogin"
-                                                prefHeight="42.0" prefWidth="220.0"
-                                                style="-fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;"
-                                                text="Login" />
-                                        </children>
-                                    </VBox>
-                                </Tab>
-                                <Tab text="📝  Sign Up">
-                                    <VBox spacing="14.0"
-                                        style="-fx-background-color: rgba(255,255,255,0.15); -fx-padding: 28; -fx-background-radius: 0 0 10 10;">
-                                        <children>
-                                            <Label text="Create an Account" textFill="WHITE">
-                                                <font>
-                                                    <Font name="System Bold" size="22.0" />
-                                                </font>
-                                            </Label>
-                                            <VBox spacing="5.0">
-                                                <children>
-                                                    <Label text="Username" textFill="#d0e8ff" />
-                                                    <TextField fx:id="signupUsernameField"
-                                                        promptText="Choose a username"
-                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
-                                                </children>
-                                            </VBox>
-                                            <VBox spacing="5.0">
-                                                <children>
-                                                    <Label text="Email" textFill="#d0e8ff" />
-                                                    <TextField fx:id="signupEmailField"
-                                                        promptText="Enter your email"
-                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
-                                                </children>
-                                            </VBox>
-                                            <VBox spacing="5.0">
-                                                <children>
-                                                    <Label text="Password" textFill="#d0e8ff" />
-                                                    <PasswordField fx:id="signupPasswordField"
-                                                        promptText="Min 6 characters"
-                                                        style="-fx-background-color: rgba(255,255,255,0.18); -fx-text-fill: white; -fx-prompt-text-fill: rgba(200,220,255,0.7); -fx-border-color: transparent; -fx-border-radius: 6; -fx-background-radius: 6; -fx-padding: 9; -fx-font-size: 13;" />
-                                                </children>
-                                            </VBox>
-                                            <Label fx:id="signupErrorLabel" textFill="#ff6b6b"
-                                                wrapText="true" />
-                                            <Label fx:id="signupSuccessLabel" textFill="#2ecc71"
-                                                wrapText="true" />
-                                            <Button mnemonicParsing="false" onAction="#handleSignup"
-                                                prefHeight="42.0" prefWidth="220.0"
-                                                style="-fx-font-size: 14; -fx-font-weight: bold; -fx-background-color: #2980b9; -fx-text-fill: white; -fx-background-radius: 8; -fx-cursor: hand;"
-                                                text="Create Account" />
-                                        </children>
-                                    </VBox>
-                                </Tab>
-                            </tabs>
-                        </TabPane>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </HBox>
                         <HBox alignment="CENTER" spacing="14.0">
                             <padding>
                                 <Insets top="14.0" />
