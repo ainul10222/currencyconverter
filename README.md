@@ -42,24 +42,24 @@ currencyconverter/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   ├── module-info.java                    # Module declarations
+│   │   │   ├── module-info.java                        # Module declarations
 │   │   │   └── com/ainul/currencyconverter/
-│   │   │       ├── App.java                        # Main application entry point
+│   │   │       ├── App.java                            # Main application entry point
 │   │   │       ├── models/
-│   │   │       │   ├── User.java                   # User model
-│   │   │       │   └── Currency.java               # Currency model
+│   │   │       │   ├── User.java                       # User model
+│   │   │       │   └── Currency.java                   # Currency model
 │   │   │       ├── services/
-│   │   │       │   ├── AuthenticationService.java  # User authentication logic
+│   │   │       │   ├── AuthenticationService.java      # User authentication logic
 │   │   │       │   └── CurrencyConversionService.java  # Conversion logic
 │   │   │       └── controllers/
-│   │   │           ├── WelcomeController.java      # Login/Signup controller
-│   │   │           └── HomeController.java         # Main app controller
+│   │   │           ├── WelcomeController.java          # Login/Signup controller
+│   │   │           └── HomeController.java             # Main app controller
 │   │   └── resources/
 │   │       └── com/ainul/currencyconverter/
-│   │           ├── welcome.fxml                    # Welcome page UI
-│   │           └── home.fxml                       # Home page UI
-│   └── test/                                        # Test directory
-└── pom.xml                                          # Maven configuration
+│   │           ├── welcome.fxml                        # Welcome page UI
+│   │           └── home.fxml                           # Home page UI
+│   └── test/                                           # Test directory
+└── pom.xml                                             # Maven configuration
 ```
 
 ---
@@ -77,7 +77,7 @@ currencyconverter/
 1. **Clone the Repository**
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/ainul10222/currencyconverter.git
     cd currencyconverter
     ```
 
